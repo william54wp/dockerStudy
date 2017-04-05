@@ -13,8 +13,7 @@
 1. 配置Docker软件源，安装 Docker
 ## Docker 学习
 ### Docker 系统搭建练习
-1. 搭建 wordpress
-由两部分组成： mariadb wordpress
+1. 搭建 wordpress 由两部分组成： mariadb wordpress : 测试地址：[http://localhost:8080/](http://localhost:8080/) 
     1. mariadb : [ImageInfo](https://dashboard.daocloud.io/packages/b58db9a4-a808-4611-aaf0-d01e0acc0c5b)
         
             docker run --name db --env MYSQL_ROOT_PASSWORD=example -d mariadb
@@ -23,8 +22,7 @@
         
             docker run --name myWordPress --link db:mysql -p 8080:80 -d wordpress
     
-1. 搭建 GitLab
-由三部分组成： postgresql redis gitlab
+1. 搭建 GitLab 由三部分组成： postgresql redis gitlab 测试地址：[http://localhost:10080](http://localhost:10080)
     
     1. sameersbn/postgresql:9.4-12 [ImageInfo](https://github.com/sameersbn/docker-postgresql/tree/9.4-12)
     
@@ -50,8 +48,8 @@
                 --env 'GITLAB_SECRETS_OTP_KEY_BASE=long-and-random-alpha-numeric-string' \
                 --volume /srv/docker/gitlab/gitlab:/home/git/data \
                 sameersbn/gitlab:8.4.4
-1. 搭建 redmine 服务
-    1.  sameersbn/postgresql:9.4-12
+1. 搭建 redmine 服务 由两部分组成： postgresql,redmine 测试地址：[http://locahlost:10083](http://locahlost:10083)
+    1. sameersbn/postgresql:9.4-12
             
             docker run --name=postgresql-redmine -d \
                 --env='DB_NAME=redmine_production' \
