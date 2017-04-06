@@ -63,3 +63,15 @@
                 --env='REDMINE_PORT=10083' \
                 --volume=/srv/docker/redmine/redmine:/home/redmine/data \
                 sameersbn/redmine:3.2.0-4
+### docker study
+1. 查询 Docker 版本号
+
+        docker version
+
+1. 查询镜像
+
+        docker search [string]
+
+1. 下载镜像
+
+        docker pull [imageName]
