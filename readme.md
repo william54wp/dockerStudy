@@ -72,6 +72,27 @@
 
         docker search [string]
 
+1. 查询容器信息
+
+        docker inspect
+
 1. 下载镜像
 
         docker pull [imageName]
+
+1. docker-compose
+
+    1. 安装 docker-compose
+    1. 应用 docker-compose
+
+                wordpress:
+                image: wordpress
+                links:
+                - db:mysql
+                ports:
+                - 8080:80
+
+                db:
+                image: mariadb
+                environment: 
+                - MYSQL_ROOT_PASSWORD:example
