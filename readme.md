@@ -83,6 +83,9 @@
 1. docker-compose
 
     1. 安装 docker-compose
+
+            sudo apt-get install docker-compose
+
     1. 应用 docker-compose
 
                 wordpress:
@@ -91,8 +94,7 @@
                 - db:mysql
                 ports:
                 - 8080:80
-
                 db:
-                image: mariadb
-                environment: 
-                - MYSQL_ROOT_PASSWORD:example
+                images:mariadb
+                environment:
+                MYSQL_ROOT_PASSWORD:example
