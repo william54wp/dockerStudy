@@ -83,11 +83,15 @@
 1. docker-compose
 
     1. 安装 docker-compose
+
+            sudo apt-get install docker-compose
+
     1. 应用 docker-compose
         1. 通过 docker-compose 安装拉取和建立 workpress 应用
             1. 建立 wordpress 文件夹
             1. 建立 docker-compose.yml 文件如下：
 
+<<<<<<< HEAD
                         wordpress:
                         image: wordpress
                         links:
@@ -100,3 +104,15 @@
                         environment: 
                         - MYSQL_ROOT_PASSWORD:example
             1. 启动 docker-compose up -d
+=======
+                wordpress:
+                image: wordpress
+                links:
+                - db:mysql
+                ports:
+                - 8080:80
+                db:
+                images:mariadb
+                environment:
+                MYSQL_ROOT_PASSWORD:example
+>>>>>>> 56ed24f5ae3d0533cd92b31e250c415a91d61877
